@@ -1,0 +1,114 @@
+
+<table class="table table-hover"> 
+           <caption><center><b>Hello  {{ name.email }} </b><span style = "padding-left:50px"><button type = "button" class = "btn btn-info" ng-click = "logout()"> Logout?</button></span></center></caption>
+               <div>            
+            </div>
+           <thead> 
+               <tr> 
+                   <th>S.NO.</th> 
+                   <th>Company Name</th> 
+                   <th>Name</th> 
+                   <th>Address 1</th>
+                   <th>Address 2</th>
+                   <th>City</th>
+                   <th>State</th>
+                   <th>Country</th>
+                   <th>Phone</th>
+                   <th>Mobile</th>
+                </tr> 
+            </thead> 
+        <tbody> 
+            <tr ng-repeat = "contact in allContacts"> 
+                <th scope=row>{{$index+1}}</th> 
+                    <td>{{contact.Name}}</td> 
+                    <td>{{contact.CompanyName}}</td> 
+                    <td>{{contact.Address1}}</td>
+                    <td>{{contact.Address2}}</td>
+                    <td>{{contact.City}}</td>
+                    <td>{{contact.State}}</td>
+                    <td>{{contact.Country}}</td>
+                    <td>{{contact.Phone}}</td>
+                    <td>{{contact.Mobile}}</td>
+                    <td><button type="button" class="btn btn-warning" ng-click = "updatedata(contact)">Update</button></td>
+                    <td><button type="button" class="btn btn-danger" ng-click = "deletedata(contact)">Delete</button></td>
+            </tr> 
+         
+        </tbody> 
+    </table>
+    <span style="padding-left: 550px;"><button type="submit" class="btn btn-primary" ng-click = "showForm = !showForm">Create New Record</button></span>
+    
+    <div ng-show="showForm">
+        <form class="form-horizontal" style = "padding-top: 150px; padding-left: 250px;">
+            
+            <div class = "form-group">
+                <label for="company" class="col-sm-2 control-label">Company Name</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="inputEmail3" placeholder="Company Name" style="width:500px;" ng-model = "visitingcard.CompanyName">
+                    </div>
+            </div>
+            
+            <div class = "form-group">
+                <label for="name" class="col-sm-2 control-label">Name</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="name" placeholder="Name" style="width:500px;" ng-model = "visitingcard.Name">
+                    </div>
+            </div>
+            
+            <div class = "form-group">
+                <label for="add1" class="col-sm-2 control-label">Address 1</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="add1" placeholder="Address 1" style="width:500px;" ng-model = "visitingcard.Address1">
+                    </div>
+            </div>
+            
+            <div class = "form-group">
+                <label for="add2" class="col-sm-2 control-label">Address 2</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="add2" placeholder="Address 2" style="width:500px;" ng-model = "visitingcard.Address2">
+                    </div>
+            </div>
+            
+            <div class = "form-group">
+                <label for="city" class="col-sm-2 control-label">City</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="city" placeholder="City" style="width:500px;" ng-model = "visitingcard.City">
+                    </div>
+            </div>
+
+            <div class = "form-group">
+                <label for="state" class="col-sm-2 control-label">State</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="state" placeholder="State" style="width:500px;" ng-model = "visitingcard.State">
+                    </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="country" class="col-sm-2 control-label">Country</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="country" placeholder="Country" style="width:500px;" ng-model = "visitingcard.Country">
+                    </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone" class="col-sm-2 control-label">Phone</label>
+                    <div class="col-sm-10">
+                      <input type="number" class="form-control" id="phone" placeholder="Phone" style="width:500px;" ng-model = "visitingcard.Phone">
+                    </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="mobile" class="col-sm-2 control-label">Mobile</label>
+                    <div class="col-sm-10">
+                      <input type="number" class="form-control" id="mobile" placeholder="Mobile" style="width:500px;" ng-model = "visitingcard.Mobile">
+                    </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="submit" class="btn btn-primary" ng-click = "make()">{{buttonText}}</button>
+                </div>
+            </div>
+        </form>
+
+        
+    </div>
